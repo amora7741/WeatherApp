@@ -7,6 +7,7 @@ export default function renderSearchBar() {
   const searchBar = document.createElement('input');
   searchBar.setAttribute('id', 'cityinput');
   const searchButton = document.createElement('button');
+  searchButton.setAttribute('id', 'search');
   searchButton.textContent = 'Search';
 
   searchForm.appendChild(searchLabel);
