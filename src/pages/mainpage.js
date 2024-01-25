@@ -15,13 +15,18 @@ export default function renderMainPage(container) {
 async function getData() {
   const KEY = '9e582be9796f4a0fbac203630242401';
   const qry = document.querySelector('#cityinput').value;
+  let weatherData;
 
-  const response = await fetch(
-    `https://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${qry}&days=3`,
-    { mode: 'cors' }
-  );
+  try {
+    const response = await fetch(
+      `https://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${qry}&days=3`,
+      { mode: 'cors' }
+    );
 
-  const weatherData = await response.json();
+    weatherData = await response.json();
+  } catch (err) {
+    alert(err);
+  }
 
   return weatherData;
 }

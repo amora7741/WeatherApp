@@ -48,13 +48,3 @@ form button {
   border-radius: var(--rounded-corners);
   padding: 5px 10px;
 }
-
-.fart {
-  width: 500px;
-  height: 500px;
-  background-color: pink;
-  align-self: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
