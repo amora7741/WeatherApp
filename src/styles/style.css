@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
-  --rounded-corners: 10px;
+  --rounded-corners: 5px;
 }
 
 * {
@@ -28,7 +28,23 @@ header {
   padding: 0px 30px;
 }
 
+header img {
+  width: 40px;
+  height: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
 form input {
   padding: 5px;
-  border: none;
+  border-radius: var(--rounded-corners);
+}
+
+form button {
+  border-radius: var(--rounded-corners);
+  padding: 5px 10px;
 }
