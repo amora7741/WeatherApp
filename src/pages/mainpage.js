@@ -5,22 +5,28 @@ export default function renderMainPage(container) {
 
   const searchbtn = document.querySelector('#search');
   searchbtn.addEventListener('click', (e) => {
-    getData().then(function (data) {
+    const qry = document.querySelector('#cityinput').value;
+    fetchWeatherData(qry).then(function (data) {
       console.log(data);
+      //renderMainWeatherDisplay(data);
+      //renderForecastDisplay(data);
     });
     e.preventDefault();
   });
 }
 
-async function getData() {
+async function fetchWeatherData(qry) {
   const KEY = '9e582be9796f4a0fbac203630242401';
-  const qry = document.querySelector('#cityinput').value;
+  const API_ENDPOINT = 'https://api.weatherapi.com/v1/forecast.json';
+  const forecastAmount = 3;
   let weatherData;
 
   try {
     const response = await fetch(
-      `https://api.weatherapi.com/v1/forecast.json?key=${KEY}&q=${qry}&days=3`,
-      { mode: 'cors' }
+      `${API_ENDPOINT}?key=${KEY}&q=${qry}&days=${forecastAmount}`,
+      {
+        mode: 'cors',
+      }
     );
 
     weatherData = await response.json();

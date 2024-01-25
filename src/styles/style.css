@@ -16,8 +16,8 @@ body {
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
 }
 
 header {
@@ -26,6 +26,7 @@ header {
   align-items: center;
   gap: 15px;
   padding: 0px 30px;
+  grid-row: 1 / 2;
 }
 
 header img {
