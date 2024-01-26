@@ -74,10 +74,7 @@ main {
 }
 
 @media (max-width: 716px) {
-  header {
-    flex-direction: column;
-  }
-
+  header,
   form {
     flex-direction: column;
   }
