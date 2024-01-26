@@ -1,7 +1,6 @@
 export default function createForecastCard(day) {
   const forecastCard = document.createElement('div');
   forecastCard.className = 'forecastcard';
-  console.log(day);
 
   const dateValue = new Date(day.date);
 

@@ -110,5 +110,6 @@ main {
   .forecastcard {
     flex-direction: row;
     align-items: center;
+    font-size: 0.6rem;
   }
 }
