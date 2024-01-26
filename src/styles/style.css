@@ -61,7 +61,7 @@ form button {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   grid-row: 2 / 3;
 }
 
@@ -96,10 +96,11 @@ main {
   padding: 20px;
 }
 
-.placeholder {
-  border: 1px solid black;
-  background-color: pink;
+.forecastcard {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid black;
 }
