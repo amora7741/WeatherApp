@@ -1,6 +1,6 @@
-export default function renderMainWeatherDisplay(data) {
+export default function renderCurrentWeatherDisplay(data) {
   const weatherDisplayContainer = document.createElement('div');
-  weatherDisplayContainer.className = 'mainweather';
+  weatherDisplayContainer.className = 'currentweather';
 
   const location = document.createElement('h2');
   location.textContent = data.location['name'];

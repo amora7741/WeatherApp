@@ -64,18 +64,25 @@ main {
   grid-row: 2 / 3;
 }
 
-.mainweather {
+.currentweather {
   align-self: center;
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 10px;
   justify-content: center;
+  font-size: 2.5rem;
 }
 
 @media (max-width: 716px) {
   header,
   form {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 446px) {
+  .mainweather {
+    font-size: 1.8rem;
   }
 }

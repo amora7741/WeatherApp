@@ -1,30 +1,36 @@
 import renderHeader from '../components/header.js';
 import renderMainDisplay from '../components/maindisplay.js';
-import renderMainWeatherDisplay from '../components/mainweatherdisplay.js';
+import renderCurrentWeatherDisplay from '../components/currentweatherdisplay.js';
 
 export default function renderMainPage(container) {
   container.appendChild(renderHeader());
   container.appendChild(renderMainDisplay());
 
-  loadWeatherData('Los Angeles');
+  displayWeatherData('Los Angeles');
 
   const searchbtn = document.querySelector('#search');
   searchbtn.addEventListener('click', async (e) => {
     e.preventDefault();
     const qry = document.querySelector('#cityinput').value;
-    loadWeatherData(qry);
+    displayWeatherData(qry);
   });
 }
 
-async function loadWeatherData(qry) {
+async function displayWeatherData(qry) {
   const weatherData = await fetchWeatherData(qry);
 
-  const existingMainWeather = document.querySelector('main .mainweather');
+  const existingMainWeather = document.querySelector('main .currentweather');
+  const existingWeatherForecast = document.querySelector(
+    'main .weatherforecast'
+  );
   if (existingMainWeather) {
     existingMainWeather.remove();
   }
+  if (existingWeatherForecast) {
+    existingWeatherForecast.remove();
+  }
 
-  const mainWeatherDisplay = renderMainWeatherDisplay(weatherData);
+  const mainWeatherDisplay = renderCurrentWeatherDisplay(weatherData);
   document.querySelector('main').appendChild(mainWeatherDisplay);
 }
 
