@@ -19,6 +19,7 @@ export default function renderMainPage(container) {
 
 async function displayWeatherData(qry) {
   const weatherData = await fetchWeatherData(qry);
+  console.log(weatherData);
 
   const existingMainWeather = document.querySelector('main .currentweather');
   const existingWeatherForecast = document.querySelector(

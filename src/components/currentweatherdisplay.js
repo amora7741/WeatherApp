@@ -3,7 +3,7 @@ export default function renderCurrentWeatherDisplay(data) {
   weatherDisplayContainer.className = 'currentweather';
 
   const location = document.createElement('h2');
-  location.textContent = data.location['name'];
+  location.textContent = `${data.location['name']}, ${data.location['region']}`;
 
   const temp = document.createElement('h1');
   temp.textContent = `${data.current.temp_f}°`;
