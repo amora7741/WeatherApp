@@ -112,4 +112,8 @@ main {
     align-items: center;
     font-size: 0.6rem;
   }
+
+  .forecastcard img {
+    width: 50px;
+  }
 }
