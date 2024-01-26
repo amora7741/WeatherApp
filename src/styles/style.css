@@ -60,7 +60,6 @@ main {
 }
 
 .mainweather {
-  min-width: 20vw;
   width: auto;
   min-height: 30vh;
   height: auto;
@@ -77,5 +76,12 @@ main {
 @media (max-width: 716px) {
   header {
     flex-direction: column;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
   }
 }
