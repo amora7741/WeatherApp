@@ -22,7 +22,7 @@ async function displayWeatherData(qry) {
 
   const existingMainWeather = document.querySelector('main .currentweather');
   const existingWeatherForecast = document.querySelector(
-    'main .weatherforecast'
+    'main .forecastdisplay'
   );
   if (existingMainWeather) {
     existingMainWeather.remove();
