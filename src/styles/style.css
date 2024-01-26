@@ -82,7 +82,7 @@ main {
 }
 
 @media (max-width: 446px) {
-  .mainweather {
+  .currentweather {
     font-size: 1.8rem;
   }
 }

@@ -1,6 +1,7 @@
 import renderHeader from '../components/header.js';
 import renderMainDisplay from '../components/maindisplay.js';
 import renderCurrentWeatherDisplay from '../components/currentweatherdisplay.js';
+import renderForecastDisplay from '../components/forecastdisplay.js';
 
 export default function renderMainPage(container) {
   container.appendChild(renderHeader());
@@ -31,7 +32,9 @@ async function displayWeatherData(qry) {
   }
 
   const mainWeatherDisplay = renderCurrentWeatherDisplay(weatherData);
+  const forecastDisplay = renderForecastDisplay(weatherData);
   document.querySelector('main').appendChild(mainWeatherDisplay);
+  document.querySelector('main').appendChild(forecastDisplay);
 }
 
 async function fetchWeatherData(qry) {
