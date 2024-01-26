@@ -1,17 +1,26 @@
 import renderHeader from '../components/header.js';
+import renderMainDisplay from '../components/maindisplay.js';
+import renderMainWeatherDisplay from '../components/mainweatherdisplay.js';
 
 export default function renderMainPage(container) {
   container.appendChild(renderHeader());
+  container.appendChild(renderMainDisplay());
+  const main = document.querySelector('main');
 
   const searchbtn = document.querySelector('#search');
-  searchbtn.addEventListener('click', (e) => {
-    const qry = document.querySelector('#cityinput').value;
-    fetchWeatherData(qry).then(function (data) {
-      console.log(data);
-      //renderMainWeatherDisplay(data);
-      //renderForecastDisplay(data);
-    });
+  searchbtn.addEventListener('click', async (e) => {
     e.preventDefault();
+    const qry = document.querySelector('#cityinput').value;
+    const weatherData = await fetchWeatherData(qry);
+
+    // Check if main already has the .mainweather child
+    const existingMainWeather = main.querySelector('.mainweather');
+    if (existingMainWeather) {
+      main.removeChild(existingMainWeather);
+    }
+
+    main.appendChild(renderMainWeatherDisplay(weatherData));
+    // renderForecastDisplay(data);
   });
 }
 

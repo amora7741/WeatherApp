@@ -17,7 +17,9 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: 1fr 5fr;
+  max-height: 100vh;
+  gap: 30px;
 }
 
 header {
@@ -48,4 +50,25 @@ form input {
 form button {
   border-radius: var(--rounded-corners);
   padding: 5px 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  grid-row: 2 / 3;
+}
+
+.mainweather {
+  min-width: 20vw;
+  width: auto;
+  min-height: 30vh;
+  height: auto;
+  border: 1px solid black;
+  border-radius: var(--rounded-corners);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
 }
