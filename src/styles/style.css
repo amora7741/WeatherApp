@@ -45,6 +45,7 @@ header img {
 form input {
   padding: 5px;
   border-radius: var(--rounded-corners);
+  margin-right: 5px;
 }
 
 form button {
@@ -71,4 +72,10 @@ main {
   flex-direction: column;
   padding: 10px;
   justify-content: center;
+}
+
+@media (max-width: 716px) {
+  header {
+    flex-direction: column;
+  }
 }
