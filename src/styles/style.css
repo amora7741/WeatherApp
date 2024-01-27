@@ -65,6 +65,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   grid-row: 2 / 3;
+  gap: 30px;
 }
 
 .currentweather {
@@ -91,7 +92,17 @@ main {
   }
 }
 
-.forecastdisplay {
+.forecastcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.forecasttitle {
+  align-self: center;
+}
+
+.forecastcardcontainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;

@@ -4,7 +4,7 @@ export default function createForecastCard(day, isCelsius) {
 
   const dateValue = new Date(day.date);
 
-  const weekday = getWeekday(dateValue.getUTCDay(), new Date().getUTCDay());
+  const weekday = getWeekday(dateValue.getUTCDay(), new Date().getDay());
   const dayTitle = document.createElement('h1');
   dayTitle.textContent = `${weekday}`;
 
