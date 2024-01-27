@@ -1,4 +1,4 @@
-export default function createForecastCard(day) {
+export default function createForecastCard(day, isCelsius) {
   const forecastCard = document.createElement('div');
   forecastCard.className = 'forecastcard';
 
@@ -16,7 +16,9 @@ export default function createForecastCard(day) {
   forecastCard.appendChild(weatherIcon);
 
   const hiLow = document.createElement('h2');
-  hiLow.textContent = `Low: ${day.day.mintemp_f} / High: ${day.day.maxtemp_f}`;
+  const minTemp = isCelsius ? day.day.mintemp_c : day.day.mintemp_f;
+  const maxTemp = isCelsius ? day.day.maxtemp_c : day.day.maxtemp_f;
+  hiLow.textContent = `Low: ${minTemp}° / High: ${maxTemp}°`;
 
   forecastCard.appendChild(hiLow);
 

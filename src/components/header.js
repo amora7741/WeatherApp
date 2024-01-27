@@ -1,7 +1,7 @@
 import renderSearchBar from './search';
 import cloud from '../icons/weather-cloudy.svg';
 
-export default function renderHeader() {
+export default function renderHeader(onTemperatureUnitChange) {
   const header = document.createElement('header');
   const logo = document.createElement('div');
   logo.className = 'logo';
@@ -17,6 +17,12 @@ export default function renderHeader() {
   logo.appendChild(title);
 
   header.appendChild(logo);
+
+  const tempSwitchButton = document.createElement('button');
+  tempSwitchButton.textContent = 'C°/F°';
+  tempSwitchButton.addEventListener('click', onTemperatureUnitChange);
+  header.appendChild(tempSwitchButton);
+
   header.appendChild(renderSearchBar());
 
   return header;

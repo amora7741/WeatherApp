@@ -3,8 +3,10 @@ import renderMainDisplay from '../components/maindisplay.js';
 import renderCurrentWeatherDisplay from '../components/currentweatherdisplay.js';
 import renderForecastDisplay from '../components/forecastdisplay.js';
 
+let isCelsius = false;
+
 export default function renderMainPage(container) {
-  container.appendChild(renderHeader());
+  container.appendChild(renderHeader(onTemperatureUnitChange));
   container.appendChild(renderMainDisplay());
 
   displayWeatherData('Los Angeles');
@@ -15,6 +17,12 @@ export default function renderMainPage(container) {
     const qry = document.querySelector('#cityinput').value;
     displayWeatherData(qry);
   });
+}
+
+async function onTemperatureUnitChange() {
+  isCelsius = !isCelsius;
+  const qry = document.querySelector('#cityinput').value || 'Los Angeles';
+  displayWeatherData(qry);
 }
 
 async function displayWeatherData(qry) {
@@ -31,8 +39,11 @@ async function displayWeatherData(qry) {
     existingWeatherForecast.remove();
   }
 
-  const mainWeatherDisplay = renderCurrentWeatherDisplay(weatherData);
-  const forecastDisplay = renderForecastDisplay(weatherData);
+  const mainWeatherDisplay = renderCurrentWeatherDisplay(
+    weatherData,
+    isCelsius
+  );
+  const forecastDisplay = renderForecastDisplay(weatherData, isCelsius);
   document.querySelector('main').appendChild(mainWeatherDisplay);
   document.querySelector('main').appendChild(forecastDisplay);
 }

@@ -25,10 +25,11 @@ body {
 header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 15px;
   padding: 15px;
   grid-row: 1 / 2;
+  margin-top: -30px;
 }
 
 header img {
@@ -53,9 +54,10 @@ form input {
   border-radius: var(--rounded-corners);
 }
 
-form button {
+button {
   border-radius: var(--rounded-corners);
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 main {
@@ -103,6 +105,7 @@ main {
   justify-content: center;
   gap: 10px;
   border: 1px solid black;
+  border-radius: var(--rounded-corners);
   padding: 5px;
 }
 
